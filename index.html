@@ -119,6 +119,8 @@
   .it.empty{background:#E3D3B4;border-style:dashed;box-shadow:inset 0 3px 5px rgba(80,55,20,.22)}
   .pivot{transform:translateY(-59.5px) translateZ(-143px) rotateX(var(--open,0deg));transition:transform 1.5s cubic-bezier(.3,1.25,.45,1)}
   .crack .pivot{--open:9deg;transition-duration:.7s}
+.stage:not(.open):not(.crack) .pivot{transition:transform .9s cubic-bezier(.55,0,.35,1)}
+.snap .tray,.snap .it{transition:none!important}
   .open .pivot{--open:104deg}
   .glow{width:339px;height:269px;margin:-134.5px 0 0 -169.5px;transform:rotateX(90deg) translateZ(62px);background:radial-gradient(closest-side,rgba(255,214,120,.85),rgba(200,144,31,.35) 55%,rgba(200,144,31,0))!important;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
   .crack .glow{opacity:.9}.open .glow{opacity:.55}.settled .glow{opacity:.18}
@@ -410,6 +412,7 @@
   function clear(){timers.forEach(clearTimeout);timers=[];}
   function later(fn,ms){timers.push(setTimeout(fn,reduce?0:ms));}
   function say(t){chip.textContent=t;chip.classList.toggle('hide',!t);}
+  function snap(fn){stage.classList.add('snap');fn();void stage.offsetWidth;stage.classList.remove('snap');}
   function ease(t){return 1-Math.pow(1-t,3);}
   function tween(get,set,to,ms){var from=get();tweens.push({from:from,to:to,set:set,t0:performance.now(),ms:reduce?1:ms});}
   function frontAngle(){return -28+Math.round((ry+28)/360)*360;}
@@ -454,10 +457,13 @@
   /* the artistic reveal: spin-in → light leaks → lid swings → samagri floats into its khana → lower layer rises */
   function reveal(intro){
     clear();busy=true;isOpen=true;vx=vy=0;
-    stage.classList.remove('open','crack','lift','settled','burst');
+    snap(function(){
+      stage.classList.remove('lift','settled','burst');
+      trayEls.forEach(function(t){scatter(t.el);t.el.classList.remove('lit');});
+    });
+    stage.classList.remove('open','crack');
     stage.classList.add('played');
     btn.textContent='डिब्बा बंद करें';
-    trayEls.forEach(function(t){scatter(t.el);t.el.classList.remove('lit');});
     l1Els.forEach(function(el){el.classList.remove('shine');});
     say('');
     var t=0;
@@ -488,8 +494,11 @@
   }
   function close(){
     clear();isOpen=false;busy=false;
-    stage.classList.remove('open','crack','lift','settled','burst');
-    trayEls.forEach(function(t){t.el.classList.remove('out','lit');});
+    snap(function(){
+      stage.classList.remove('lift','burst');
+      trayEls.forEach(function(t){t.el.classList.remove('out','lit');});
+    });
+    stage.classList.remove('open','crack','settled');
     l1Els.forEach(function(el){el.classList.remove('shine');});
     btn.textContent='डिब्बा खोलकर देखें';say('');
   }
