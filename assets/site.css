@@ -1,0 +1,114 @@
+/* GaonDwar — shared site styles (header, menu, footer, buttons, sections, reveal, khana grid) */
+:root{--geru:#9C4221;--geru-deep:#6E2E16;--chuna:#F4EEDF;--chuna-2:#EDE5D2;--neel:#243B5A;--haldi:#C8901F;--kajal:#211C16;--mitti:#B9A88C;--mitti-ink:#6F624E;--kraft:#CDB289;--kraft-dk:#B99C72;--kraft-lt:#E3D3B4;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Mukta',system-ui,sans-serif;background:var(--chuna);color:var(--kajal);line-height:1.65;overflow-x:clip}
+a{color:var(--geru)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+
+/* header + menu */
+header.site{background:var(--chuna);border-bottom:1px solid var(--mitti);position:sticky;top:0;z-index:50}
+header.site .nav{display:flex;align-items:center;gap:18px;padding:8px 20px;position:relative}
+header.site .brand{display:flex;align-items:center;text-decoration:none;margin-right:auto}
+header.site .brand img{height:56px;width:auto;display:block}
+.menu{display:flex;align-items:center;gap:20px}
+.menu a{text-decoration:none;color:var(--neel);font-weight:600;font-size:16px;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a[aria-current="page"]{border-bottom-color:var(--haldi)}
+.menu a.pre{color:var(--geru);display:inline-flex;align-items:center;gap:7px}
+.menu a.pre::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--haldi);animation:gdpulse 2s infinite}
+@keyframes gdpulse{0%{box-shadow:0 0 0 0 rgba(200,144,31,.7)}70%,100%{box-shadow:0 0 0 8px rgba(200,144,31,0)}}
+.nav-wa{background:var(--geru);color:#fff!important;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;white-space:nowrap}
+.burger{display:none;width:44px;height:44px;border:1.5px solid var(--mitti);border-radius:6px;background:transparent;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger span{display:block;width:20px;height:2px;background:var(--kajal);transition:transform .25s,opacity .25s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:1020px){
+  header.site .brand img{height:46px}
+  .burger{display:inline-flex}
+  .menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--chuna);border-bottom:1px solid var(--mitti);flex-direction:column;align-items:stretch;gap:0;padding:6px 20px 14px;box-shadow:0 18px 30px -20px rgba(60,35,15,.4)}
+  .menu.open{display:flex}
+  .menu a{padding:13px 0;border-bottom:1px solid var(--chuna-2);font-size:17px}
+  .menu a:hover,.menu a[aria-current="page"]{border-bottom-color:var(--chuna-2);color:var(--geru)}
+}
+@media(max-width:420px){.nav-wa{padding:8px 12px}}
+
+/* buttons + type */
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:50px;background:var(--geru);color:#fff;text-decoration:none;padding:12px 24px;border-radius:6px;font-weight:600;font-size:17px;font-family:inherit;border:2px solid var(--geru);cursor:pointer}
+.btn:hover{background:var(--geru-deep);border-color:var(--geru-deep)}
+.btn.ghost{background:transparent;color:var(--geru)}
+.btn.ghost:hover{background:rgba(156,66,33,.07)}
+.btn.light{background:var(--chuna);color:var(--geru);border-color:var(--chuna)}
+.btn.light:hover{background:#fff;border-color:#fff}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--neel);outline-offset:3px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:84px 0}
+.kick{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--haldi);margin-bottom:10px}
+.h2,h2{font-family:'Rozha One',serif;font-weight:400;font-size:clamp(30px,4.4vw,48px);line-height:1.12;color:var(--kajal);margin-bottom:14px;text-wrap:balance}
+h2 em,h1 em{font-style:normal;color:var(--geru)}
+.lead{max-width:660px;color:#4a4339;font-size:18px;margin-bottom:36px}
+.pagehead{padding:64px 0 40px}
+.pagehead h1{font-family:'Rozha One',serif;font-weight:400;font-size:clamp(42px,6.6vw,80px);line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+.pagehead .lead{margin:18px 0 0;font-size:clamp(17px,1.7vw,20px)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--mitti);border-radius:10px;padding:26px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:6px;transition:transform .25s,box-shadow .25s}
+a.card:hover{transform:translateY(-3px);box-shadow:0 16px 30px -20px rgba(60,35,15,.45)}
+.card h3{font-family:'Rozha One',serif;font-weight:400;font-size:25px;line-height:1.15;color:var(--geru)}
+.card p{color:#4a4339}
+.card .more{font-weight:700;color:var(--geru);margin-top:auto;padding-top:8px}
+.card .ico{width:34px;height:34px;color:var(--geru);margin-bottom:4px}
+.badge{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.08em;background:var(--haldi);color:#fff;border-radius:30px;padding:2px 12px}
+.badge.off{background:var(--mitti)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:800px){.two{grid-template-columns:1fr;gap:22px}}
+
+/* footer */
+footer.site{background:var(--kajal);color:var(--mitti);padding:44px 0 30px;font-size:15px}
+footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;margin-bottom:26px}
+@media(max-width:760px){footer.site .cols{grid-template-columns:1fr}}
+footer.site .flogo{display:block;height:50px;aspect-ratio:359/150;margin-bottom:10px;background:var(--chuna);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:left center;mask-position:left center;-webkit-mask-size:contain;mask-size:contain}
+footer.site h4{color:var(--chuna);font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+footer.site ul{list-style:none}
+footer.site li{padding:3px 0}
+footer.site a{color:var(--chuna);text-decoration:none}
+footer.site a:hover{text-decoration:underline}
+footer.site .legal{border-top:1px solid rgba(185,168,140,.25);padding-top:18px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* scroll reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* khana grid: each khana switches between puja step and its samagri */
+.ktray-wrap{position:relative;max-width:520px;width:100%;justify-self:center}
+.ktray{color:var(--kajal);background:var(--kraft);border-radius:10px;padding:14px;box-shadow:0 3px 0 var(--kraft-dk),0 30px 60px -28px rgba(60,35,15,.45);transform:rotate(-2.5deg)}
+.ktray .book{background:var(--chuna);border:1px solid var(--kraft-dk);border-radius:4px;text-align:center;padding:14px 10px;margin-bottom:9px}
+.ktray .book b{font-family:'Rozha One',serif;font-weight:400;font-size:clamp(17px,2.4vw,22px);display:block;line-height:1.15}
+.ktray .book span{font-size:11px;letter-spacing:.16em;color:var(--neel);font-weight:600}
+.kh{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.k{position:relative;background:var(--chuna);border:1px solid var(--kraft-dk);border-radius:4px;min-height:98px;overflow:hidden;transition:background .35s,box-shadow .35s,transform .35s}
+.k .face{position:absolute;inset:0;padding:10px 10px 12px;display:flex;flex-direction:column;justify-content:flex-end;transition:opacity .16s ease,transform .16s ease}
+.k:not(.alt) .face.a,.k.alt .face.b{transition-delay:.15s}
+.k .face.b{opacity:0;transform:translateY(12px)}
+.k.alt .face.a{opacity:0;transform:translateY(-12px)}
+.k.alt .face.b{opacity:1;transform:none}
+.k .step{font-family:'Rozha One',serif;font-size:clamp(17px,2vw,21px);line-height:1.1;color:var(--geru)}
+.k .ic{width:24px;height:24px;color:var(--mitti);margin-bottom:auto}
+.k .t{font-weight:600;font-size:14px;line-height:1.25}
+.k .e{font-size:11.5px;color:var(--mitti-ink);line-height:1.35;margin-top:2px}
+.k.on{background:#FFF8E6;box-shadow:0 0 0 2px var(--haldi),0 0 24px rgba(200,144,31,.45);transform:translateY(-2px)}
+.k.on .ic{color:var(--geru)}
+.k.home{background:transparent;border-style:dashed}
+.ktray-cap{text-align:center;font-size:14px;color:var(--mitti-ink);margin-top:18px;min-height:1.6em}
+.ktray-cap b{color:var(--geru);font-weight:600}
+
+/* mantra band */
+.mband{background:var(--geru);color:var(--chuna);overflow:hidden;padding:14px 0;white-space:nowrap}
+.mband .track{display:inline-flex;gap:44px;animation:gdscroll 50s linear infinite;font-family:'Rozha One',serif;font-size:clamp(20px,2.4vw,28px)}
+.mband .track span::after{content:"\2733";color:var(--haldi);margin-left:44px;font-size:.6em;vertical-align:middle}
+@keyframes gdscroll{to{transform:translateX(-50%)}}
+
+@media (prefers-reduced-motion: reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .menu a.pre::before,.mband .track{animation:none}
+  .k,.k .face,.card{transition:none}
+}
