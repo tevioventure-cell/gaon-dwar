@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GaonDwar | गाँवद्वार — सत्यनारायण पूजन सामग्री</title>
-<meta name="description" content="GaonDwar (गाँवद्वार) — सत्यनारायण पूजन सामग्री: कथा पुस्तक, भगवान का चित्र और आचार्य जी की विधि सहित, एक डिब्बे में। Cultural commerce from named villages and artisan clusters.">
-<meta property="og:title" content="GaonDwar | गाँवद्वार — सत्यनारायण पूजा, एक डिब्बे में">
+<title>GaonDwar | गाँवद्वार — गाँव से आपके द्वार तक</title>
+<meta name="description" content="GaonDwar (गाँवद्वार) — पूजा सामग्री, कारीगरी और गाँव की परम्पराएँ, उन गाँवों और कारीगर क्लस्टरों से जिनके लिए वे जानी जाती हैं। हर उत्पाद पर उसके स्थान का नाम।">
+<meta property="og:title" content="GaonDwar | गाँवद्वार — गाँव से आपके द्वार तक">
 <meta property="og:description" content="Puja samagri, crafts and village traditions from named villages and artisan clusters — the place of origin on every product.">
 <meta property="og:url" content="https://gaondwar.in">
 <meta property="og:type" content="website">
@@ -24,7 +24,7 @@
   /* GaonDwar palette — village building materials */
   :root{--geru:#9C4221;--geru-deep:#6E2E16;--chuna:#F4EEDF;--chuna-2:#EDE5D2;--neel:#243B5A;--haldi:#C8901F;--kajal:#211C16;--mitti:#B9A88C;--mitti-ink:#6F624E;--kraft:#CDB289;--kraft-lt:#E3D3B4;color-scheme:light}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Mukta',system-ui,sans-serif;background:var(--chuna);color:var(--kajal);line-height:1.65}
+  body{font-family:'Mukta',system-ui,sans-serif;background:var(--chuna);color:var(--kajal);line-height:1.65;overflow-x:clip}
   a{color:var(--geru)}
   .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
   header{background:var(--chuna);border-bottom:1px solid var(--mitti);position:sticky;top:0;z-index:20}
@@ -75,102 +75,29 @@
   .facts{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--mitti-ink);list-style:none}
   .facts li{display:flex;align-items:center;gap:6px}
   .facts li::before{content:"";width:6px;height:7px;border:1.5px solid var(--geru);border-bottom:0;border-radius:4px 4px 0 0}
-  .stage-wrap{position:relative;min-width:0;overflow-x:clip}
-  .stage{position:relative;height:clamp(420px,52vw,600px);perspective:1600px;perspective-origin:50% 35%;cursor:grab;touch-action:pan-y;user-select:none;-webkit-tap-highlight-color:transparent;outline:none;overflow:visible}
-  .stage.held{cursor:grabbing}
-  .stage:focus-visible{box-shadow:0 0 0 2px var(--neel);border-radius:8px}
-  .halo{position:absolute;left:50%;top:var(--wy,62%);width:560px;max-width:100%;aspect-ratio:1;transform:translate(-50%,-62%);border-radius:50%;background:radial-gradient(closest-side,rgba(200,144,31,.30),rgba(200,144,31,.10) 55%,rgba(200,144,31,0));opacity:0;transition:opacity 1.4s ease;pointer-events:none}
-  .open .halo{opacity:1}
-  .floor{position:absolute;left:50%;top:var(--fy,80%);width:calc(var(--sc,1)*520px);height:calc(var(--sc,1)*120px);transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(60,35,15,.28),rgba(60,35,15,0));filter:blur(6px);pointer-events:none}
-  .world{position:absolute;left:50%;top:var(--wy,62%);width:0;height:0;transform-style:preserve-3d;transform:scale(var(--sc,1)) rotateX(var(--rx,-28deg)) rotateY(var(--ry,-28deg))}
-  .sway{position:absolute;left:0;top:0;transform-style:preserve-3d;transform:translateY(var(--bob,0px));opacity:var(--fade,1)}
-  .grp{position:absolute;left:0;top:0;transform-style:preserve-3d}
-  .f{position:absolute;left:0;top:0}
-  .base .f{background:var(--chuna-2)}
-  .b-front,.b-back{width:350px;height:119px;margin:-59.5px 0 0 -175px}
-  .b-front{transform:translateZ(140px);background:linear-gradient(180deg,#F1EADA,#E7DEC8)!important}
-  .b-back{transform:rotateY(180deg) translateZ(140px)}
-  .b-left,.b-right{width:280px;height:119px;margin:-59.5px 0 0 -140px}
-  .b-right{transform:rotateY(90deg) translateZ(175px);background:linear-gradient(180deg,#E2D8C1,#D6CBB1)!important}
-  .b-left{transform:rotateY(-90deg) translateZ(175px)}
-  .b-bottom{width:350px;height:280px;margin:-140px 0 0 -175px;transform:rotateX(-90deg) translateZ(59.5px);background:var(--kraft)!important}
-  .b-rim{width:350px;height:280px;margin:-140px 0 0 -175px;transform:rotateX(90deg) translateZ(59.5px);background:transparent!important;border:5px solid var(--chuna)}
-  .b-front .foot{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-family:'Rozha One',serif;font-size:13px;color:var(--geru)}
-  .tray{width:339px;height:269px;margin:-134.5px 0 0 -169.5px;transform:rotateX(90deg) translateZ(var(--trayZ,56px));transition:transform 1.1s cubic-bezier(.3,.7,.2,1);background:var(--kraft)!important;transform-style:preserve-3d}
-  .lift .tray{--trayZ:185px}
-  .layer1{width:339px;height:269px;margin:-134.5px 0 0 -169.5px;transform:rotateX(90deg) translateZ(-38px);background:#D9C9A6!important;transform-style:preserve-3d}
-  .it{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;font-size:7.5px;font-weight:600;line-height:1.15;padding:2px;overflow:hidden;border-radius:2px;border:1px solid rgba(60,40,15,.28);transition:transform 1s cubic-bezier(.22,.9,.3,1.08),opacity .6s ease,box-shadow .6s;transform:translateZ(1px)}
-  .it.out{opacity:0;transform:translateZ(var(--dz,260px)) rotate(var(--dr,0deg)) scale(.85)}
-  .it.shine{box-shadow:0 0 0 1px rgba(200,144,31,.9),0 0 14px rgba(200,144,31,.6)}
-  .it.diya.lit{box-shadow:0 0 10px 4px rgba(255,190,70,.75),0 0 28px 10px rgba(200,144,31,.45)}
-  .it.book{background:#F4EEDF;color:#9C4221;font-family:'Rozha One',serif;font-weight:400;font-size:12px}
-  .it.card{background:#9C4221;color:#F4EEDF;font-family:'Rozha One',serif;font-weight:400;font-size:11px;box-shadow:2px 2px 0 rgba(0,0,0,.15)}
-  .it.red{background:#B3261E;color:#F4EEDF}.it.yel{background:#E3B33A;color:#211C16}
-  .it.ang{background:#E9D7A8;color:#211C16;background-image:linear-gradient(90deg,transparent 88%,#C8901F 88%)}
-  .it.vial{background:linear-gradient(90deg,#DCE6EE,#F7FAFC 45%,#C9D6E0);color:#243B5A;border-radius:6px}
-  .it.pow-r{background:#C0392B;color:#F4EEDF}.it.pow-c{background:#EAD9B8;color:#6E2E16}
-  .it.diya{background:radial-gradient(circle at 50% 45%,#FFFFFF,#EDEAE3 60%,#CFC8BA);color:#6E2E16;border-radius:50%}
-  .it.kapur{background:#FBFBF8;color:#6F624E}.it.janeu{background:#FAF7EE;color:#6F624E}
-  .it.thread{background:repeating-linear-gradient(45deg,#B3261E 0 3px,#E0A526 3px 6px);color:#FFFFFF;text-shadow:0 0 2px #000}
-  .it.pouch{background:#B99C72;color:#211C16}.it.cotton{background:#FFFFFF;color:#6F624E}
-  .it.dhoop{background:#5B4636;color:#F4EEDF}.it.kusha{background:#A7B06A;color:#211C16}
-  .it.kande{background:#7A5B3E;color:#F4EEDF}
-  .it.wood{background:repeating-linear-gradient(0deg,#9A6B3F 0 3px,#8A5C33 3px 6px);color:#F4EEDF}
-  .it.empty{background:#E3D3B4;border-style:dashed;box-shadow:inset 0 3px 5px rgba(80,55,20,.22)}
-  .pivot{transform:translateY(-59.5px) translateZ(-143px) rotateX(var(--open,0deg));transition:transform 1.5s cubic-bezier(.3,1.25,.45,1)}
-  .crack .pivot{--open:9deg;transition-duration:.7s}
-.stage:not(.open):not(.crack) .pivot{transition:transform .9s cubic-bezier(.55,0,.35,1)}
-.snap .tray,.snap .it{transition:none!important}
-  .open .pivot{--open:104deg}
-  .glow{width:339px;height:269px;margin:-134.5px 0 0 -169.5px;transform:rotateX(90deg) translateZ(62px);background:radial-gradient(closest-side,rgba(255,214,120,.85),rgba(200,144,31,.35) 55%,rgba(200,144,31,0))!important;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
-  .crack .glow{opacity:.9}.open .glow{opacity:.55}.settled .glow{opacity:.18}
-  .lid{transform:translateY(-7px) translateZ(143px)}
-  .lid .f{background:var(--chuna)}
-  .l-top{width:356px;height:286px;margin:-143px 0 0 -178px;transform:rotateX(90deg) translateZ(7px);background:radial-gradient(130% 100% at 40% 25%,#FAF5E9,#F4EEDF 55%,#ECE3CF)!important;color:var(--kajal);display:flex;flex-direction:column;align-items:center;text-align:center;padding:22px 20px 0;box-shadow:inset 0 0 0 1px rgba(110,46,22,.12)}
-  .logo{color:var(--geru);display:flex;flex-direction:column;align-items:center}
-  .logo svg{width:68px;height:68px}
-  .logo .bm{font-family:'Rozha One',serif;font-size:33px;line-height:1;margin-top:4px}
-  .logo .bl{font-size:7px;letter-spacing:.42em;font-weight:600;margin-top:3px;padding-left:.42em}
-  .logo .tag{font-size:8px;margin-top:3px;color:var(--geru-deep);font-weight:500}
-  .rule{width:120px;height:1px;background:rgba(110,46,22,.3);margin:10px 0 8px}
-  .pn{font-family:'Rozha One',serif;font-size:16px;line-height:1.1}
-  .prov{font-size:7px;margin-top:3px;color:var(--neel)}
-  .tm{margin-top:7px;border:2px solid var(--haldi);padding:2px 9px;line-height:1.25}
-  .tm .n{font-family:'Rozha One',serif;font-size:9.5px;display:block}
-  .tm .l{font-size:5.5px;letter-spacing:.16em;font-weight:600;display:block;color:var(--neel)}
-  .l-under{width:356px;height:286px;margin:-143px 0 0 -178px;transform:rotateX(-90deg) translateZ(7px);background:var(--geru)!important;color:var(--chuna);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-  .l-under .t{font-family:'Rozha One',serif;font-size:17px}
-  .l-front,.l-back{width:356px;height:14px;margin:-7px 0 0 -178px}
-  .l-front{transform:translateZ(143px);background:#EFE7D5!important}
-  .l-back{transform:rotateY(180deg) translateZ(143px)}
-  .l-left,.l-right{width:286px;height:14px;margin:-7px 0 0 -143px}
-  .l-right{transform:rotateY(90deg) translateZ(178px);background:#E0D6BF!important}
-  .l-left{transform:rotateY(-90deg) translateZ(178px)}
-  .chip{position:absolute;left:50%;top:10px;transform:translateX(-50%);background:var(--kajal);color:var(--chuna);font-size:14px;font-weight:500;padding:6px 14px;border-radius:999px;white-space:nowrap;transition:opacity .3s;pointer-events:none}
-  .chip.hide{opacity:0}
-  .hint{text-align:center;font-size:13px;color:var(--mitti-ink);margin-top:4px}
-  .tap-ring{position:absolute;left:50%;top:48%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;border:2px solid var(--geru);pointer-events:none;animation:ring 2.2s ease-out infinite}
-  .open .tap-ring,.played .tap-ring{display:none}
-  .petals{position:absolute;inset:0;pointer-events:none;overflow:visible}
-  .petal{position:absolute;left:50%;top:var(--wy,62%);width:9px;height:13px;border-radius:60% 60% 60% 60%/80% 80% 30% 30%;opacity:0}
-  .burst .petal{animation:petal var(--pd,2.6s) cubic-bezier(.2,.7,.3,1) var(--pdl,0s) forwards}
-  @keyframes petal{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.4)}12%{opacity:1}55%{transform:translate(var(--px),var(--py)) rotate(var(--pr)) scale(1)}100%{opacity:0;transform:translate(calc(var(--px)*1.25),calc(var(--py) + 170px)) rotate(calc(var(--pr)*2)) scale(.9)}}
-  @keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
-  @keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.2);opacity:0}}
-
-  /* inside the box */
-  .inside{background:#fff}
-  .inside .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:start}
-  @media(max-width:760px){.inside .cols{grid-template-columns:minmax(0,1fr)}}
-  .items{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
-  .items li{padding:8px 0;border-bottom:1px solid var(--chuna-2);display:flex;gap:10px;align-items:baseline}
-  .items li small{color:var(--mitti-ink);font-size:13px;margin-left:auto;text-align:right}
-  .home{background:var(--chuna);border:1px solid var(--mitti);border-radius:8px;padding:24px}
-  .home h3{font-family:'Rozha One',serif;font-weight:400;font-size:22px;color:var(--geru);margin-bottom:6px}
-  .home ul{list-style:none;margin-top:8px}
-  .home li{padding:5px 0;border-bottom:1px solid var(--chuna-2)}
-  .home p{font-size:14px;color:var(--mitti-ink);margin-top:12px}
-  @media (prefers-reduced-motion: reduce){.tap-ring,.burst .petal{animation:none}.pivot,.tray,.it,.glow,.halo{transition:none}}
+  .hero-brand{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);padding-top:56px;padding-bottom:64px}
+  .launch{display:flex;flex-direction:column;gap:6px;background:var(--geru);color:var(--chuna);text-decoration:none;border-radius:10px;padding:26px;box-shadow:0 26px 50px -30px rgba(60,35,15,.6);transition:transform .3s,box-shadow .3s}
+  .launch:hover{transform:translateY(-4px);box-shadow:0 32px 56px -28px rgba(60,35,15,.7)}
+  .launch .soon{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--chuna);border-radius:30px;padding:3px 12px 3px 10px;font-weight:600;font-size:14px;margin-bottom:10px}
+  .launch .soon i{width:8px;height:8px;border-radius:50%;background:var(--haldi);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(200,144,31,.7)}70%,100%{box-shadow:0 0 0 9px rgba(200,144,31,0)}}
+  .launch .lk{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--haldi)}
+  .launch .lt{font-family:'Rozha One',serif;font-size:clamp(30px,3.4vw,40px);line-height:1.05}
+  .launch .lg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--kraft);border-radius:6px;padding:8px;margin:12px 0 8px}
+  .launch .lg i{font-style:normal;font-family:'Rozha One',serif;font-size:20px;color:var(--geru);background:var(--chuna);border-radius:3px;text-align:center;padding:6px 0;animation:lit 9s infinite}
+  .launch .lg i.h{background:transparent;border:1px dashed var(--kraft-dk);color:var(--mitti-ink);animation:none}
+  .launch .lg i:nth-child(2){animation-delay:1s}.launch .lg i:nth-child(3){animation-delay:2s}.launch .lg i:nth-child(4){animation-delay:3s}.launch .lg i:nth-child(5){animation-delay:4s}.launch .lg i:nth-child(6){animation-delay:5s}.launch .lg i:nth-child(7){animation-delay:6s}.launch .lg i:nth-child(8){animation-delay:7s}
+  @keyframes lit{0%,8%{background:#FFF3D1;box-shadow:0 0 0 2px var(--haldi)}14%,100%{background:var(--chuna);box-shadow:none}}
+  .launch .ld{font-size:14.5px;opacity:.92}
+  .launch .lc{font-weight:700;margin-top:8px}
+  .pcard{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:6px;transition:transform .25s,box-shadow .25s}
+  a.pcard:hover{transform:translateY(-3px);box-shadow:0 16px 30px -20px rgba(60,35,15,.45)}
+  .pcard h3{margin:4px 0 2px}
+  .pcard .more{font-weight:700;color:var(--geru);margin-top:6px}
+  .pcard.muted{background:var(--chuna)}
+  .badge{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.08em;background:var(--haldi);color:#fff;border-radius:30px;padding:2px 12px}
+  .badge.off{background:var(--mitti)}
+  @media (prefers-reduced-motion: reduce){.launch .soon i,.launch .lg i{animation:none}.launch,.pcard{transition:none}}
 </style>
 </head>
 <body>
@@ -181,7 +108,7 @@
       <img src="assets/gaondwar-logo.svg" alt="GaonDwar — गाँवद्वार" width="359" height="150">
     </a>
     <nav><ul>
-      <li class="hide-sm"><a href="#inside">सामग्री में क्या है</a></li>
+      <li class="hide-sm"><a href="#products">उत्पाद</a></li>
       <li class="hide-sm"><a href="#about">About</a></li>
       <li class="hide-sm"><a href="#sourcing">Sourcing</a></li>
       <li class="hide-sm"><a href="#contact">Contact</a></li>
@@ -191,113 +118,33 @@
 </header>
 
 <main>
-  <div class="wrap hero">
+  <div class="wrap hero hero-brand">
     <div class="hero-copy">
-      <div class="eyebrow">पहला उत्पाद · सत्यनारायण पूजन सामग्री</div>
-      <h1>सत्यनारायण पूजा,<br><em>एक डिब्बे में।</em></h1>
-      <p class="lede"><b>21 सामग्री</b>, कथा पुस्तक, भगवान का चित्र और आचार्य जी की विधि। हरिद्वार का गंगाजल, कन्नौज का इत्र, खुर्जा का दीया, हाथरस की हवन सामग्री — हर सामग्री का स्रोत नामित।</p>
+      <div class="eyebrow">गाँव से आपके द्वार तक</div>
+      <h1>गाँव की चीज़ें,<br><em>गाँव के नाम से।</em></h1>
+      <p class="lede">पूजा सामग्री, कारीगरी और गाँव की परम्पराएँ — उन गाँवों और कारीगर क्लस्टरों से, जिनके लिए वे जानी जाती हैं। <b>हर उत्पाद पर उसके स्थान का नाम।</b></p>
       <div class="ctas">
-        <a class="btn" href="https://wa.me/919873844302?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%B8%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%A8%E0%A4%BE%E0%A4%B0%E0%A4%BE%E0%A4%AF%E0%A4%A3%20%E0%A4%AA%E0%A5%82%E0%A4%9C%E0%A4%A8%20%E0%A4%B8%E0%A4%BE%E0%A4%AE%E0%A4%97%E0%A5%8D%E0%A4%B0%E0%A5%80%20%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A5%80-%E0%A4%91%E0%A4%B0%E0%A5%8D%E0%A4%A1%E0%A4%B0" target="_blank" rel="noopener">WhatsApp पर प्री-ऑर्डर</a>
-        <button class="btn ghost" id="openBtn" type="button" aria-controls="stage">डिब्बा खोलकर देखें</button>
+        <a class="btn" href="satyanarayan/">पहला डिब्बा देखें</a>
+        <a class="btn ghost" href="https://wa.me/919873844302?text=Namaste%20GaonDwar" target="_blank" rel="noopener">WhatsApp पर बात करें</a>
       </div>
-      <ul class="facts">
-        <li>कोई खाद्य सामग्री नहीं</li>
-        <li>5 स्थानों से, हर स्रोत नामित</li>
-        <li>प्री-ऑर्डर पर तैयार</li>
-      </ul>
     </div>
-
-    <div class="stage-wrap">
-      <div class="stage" id="stage" tabindex="0" role="button" aria-label="डिब्बा खोलें और अंदर की सामग्री देखें">
-        <div class="halo"></div>
-        <div class="floor"></div>
-        <div class="petals" id="petals" aria-hidden="true"></div>
-        <span class="tap-ring" aria-hidden="true"></span>
-        <div class="world" id="world">
-          <div class="sway">
-            <div class="grp base">
-              <div class="f b-bottom"></div>
-              <div class="f b-back"></div>
-              <div class="f b-left"></div>
-              <div class="f layer1" id="l1"></div>
-              <div class="f glow"></div>
-              <div class="f tray" id="l2"></div>
-              <div class="f b-rim"></div>
-              <div class="f b-right"></div>
-              <div class="f b-front"><div class="foot">गाँवद्वार</div></div>
-            </div>
-            <div class="grp pivot">
-              <div class="grp lid">
-                <div class="f l-under">
-                  <svg viewBox="45 72 210 208" width="48" height="48" aria-hidden="true" style="color:#F4EEDF"><g fill="none" stroke="currentColor" stroke-width="17.1"><path d="M81.6 245.6V158.2A68.4 68.4 0 0 1 218.4 158.2V245.6"/></g><g fill="none" stroke="currentColor" stroke-width="11.4" stroke-linecap="round"><path d="M150 234.2V177.2M150 196.2 127.2 181M150 196.2 172.8 181M150 222.8 127.2 207.6M150 222.8 172.8 207.6"/></g><rect x="55" y="249.4" width="190" height="20.9" rx="3.8" fill="currentColor"/></svg>
-                  <div class="t">गाँव से आपके द्वार तक</div>
-                </div>
-                <div class="f l-back"></div>
-                <div class="f l-left"></div>
-                <div class="f l-right"></div>
-                <div class="f l-front"></div>
-                <div class="f l-top">
-                  <div class="logo">
-                    <svg viewBox="45 72 210 208" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="17.1"><path d="M81.6 245.6V158.2A68.4 68.4 0 0 1 218.4 158.2V245.6"/></g><g fill="none" stroke="currentColor" stroke-width="11.4" stroke-linecap="round"><path d="M150 234.2V177.2M150 196.2 127.2 181M150 196.2 172.8 181M150 222.8 127.2 207.6M150 222.8 172.8 207.6"/></g><rect x="55" y="249.4" width="190" height="20.9" rx="3.8" fill="currentColor"/></svg>
-                    <div class="bm">गाँवद्वार</div>
-                    <div class="bl">GAONDWAR</div>
-                    <div class="tag">गाँव से आपके द्वार तक</div>
-                  </div>
-                  <div class="rule"></div>
-                  <div class="pn">सत्यनारायण पूजन सामग्री</div>
-                  <div class="prov">21 सामग्री · कथा पुस्तक, चित्र एवं आचार्य जी की विधि सहित</div>
-                  <div class="tm"><span class="n">5 स्थान · हर स्रोत नामित</span><span class="l">5 PLACES · EVERY SOURCE NAMED</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="chip hide" id="chip" aria-live="polite"></p>
-      </div>
-      <p class="hint">चारों ओर घुमाने के लिए खींचें · टैप से खोलें / बंद करें</p>
-    </div>
+    <a class="launch" href="satyanarayan/" aria-label="सत्यनारायण पूजन सामग्री — जल्द आ रहा है">
+      <span class="soon"><i></i>जल्द आ रहा है</span>
+      <span class="lk">पहला उत्पाद</span>
+      <span class="lt">सत्यनारायण<br>पूजन सामग्री</span>
+      <span class="lg" aria-hidden="true"><i>१</i><i>२</i><i>३</i><i>४</i><i>५</i><i>६</i><i>८</i><i>९</i><i class="h">१०</i></span>
+      <span class="ld">21 सामग्री · 9 खाने पूजा के क्रम में · आचार्य जी की विधि</span>
+      <span class="lc">देखें →</span>
+    </a>
   </div>
 
-  <section id="inside" class="inside">
+  <section id="products" style="background:#fff">
     <div class="wrap">
-      <h2>सामग्री में क्या है</h2>
-      <p class="lead">सूखी और टिकाऊ सामग्री हम भेजते हैं। जो ताज़ा चाहिए या खाने की चीज़ है, वह आपके घर और बाज़ार से — ताकि सब शुद्ध और ताज़ा रहे।</p>
-      <div class="cols">
-        <ul class="items">
-          <li>कथा पुस्तक<small>आचार्य जी की विधि</small></li>
-          <li>सत्यनारायण भगवान का चित्र</li>
-          <li>रोली</li>
-          <li>चंदन</li>
-          <li>कपूर</li>
-          <li>गंगाजल<small>हरिद्वार</small></li>
-          <li>गुलाबजल</li>
-          <li>इत्र<small>कन्नौज</small></li>
-          <li>कलावा</li>
-          <li>जनेऊ</li>
-          <li>रुई बत्ती</li>
-          <li>धूपबत्ती</li>
-          <li>हवन सामग्री 100 g<small>हाथरस</small></li>
-          <li>हवन के कंडे</li>
-          <li>समिधा<small>आम की लकड़ी</small></li>
-          <li>सिरेमिक दीया<small>खुर्जा</small></li>
-          <li>लाल वस्त्र</li>
-          <li>पीला वस्त्र</li>
-          <li>अंगवस्त्र</li>
-          <li>कुश पवित्री ×2</li>
-        </ul>
-        <div class="home">
-          <h3>अपने घर से</h3>
-          <ul>
-            <li>नारियल, केले और पान के पत्ते</li>
-            <li>फूल, फूलों की माला, तुलसी दल</li>
-            <li>आम के पत्ते — द्वार के लिए</li>
-            <li>दूध, दही, घी, शहद, शक्कर — पंचामृत</li>
-            <li>पंचमेवा · आटा, सूजी, गुड़ — प्रसाद</li>
-            <li>अक्षत, सुपारी, हल्दी</li>
-            <li>घी या तेल, माचिस</li>
-          </ul>
-          <p>कोई खाद्य सामग्री डिब्बे में नहीं है।</p>
-        </div>
+      <h2>उत्पाद</h2>
+      <p class="lead">हर उत्पाद अपने पेज के साथ आता है — जब वह तैयार हो।</p>
+      <div class="grid">
+        <a class="card pcard" href="satyanarayan/"><span class="badge">जल्द आ रहा है</span><h3>सत्यनारायण पूजन सामग्री</h3><p>21 सामग्री, कथा पुस्तक और आचार्य जी की विधि। 9 खाने पूजा के क्रम में। प्री-ऑर्डर खुले हैं।</p><span class="more">पेज देखें →</span></a>
+        <div class="card pcard muted"><span class="badge off">आगे</span><h3>और उत्पाद</h3><p>त्योहारों के डिब्बे और गाँवों की कारीगरी — हर एक अपने स्थान के नाम से, जब तैयार हो।</p></div>
       </div>
     </div>
   </section>
@@ -356,205 +203,5 @@
     <div><a href="privacy.html">Privacy Policy</a></div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var S=14;
-  var L1=[
-    {n:'कथा पुस्तक',x:.4,y:.1,w:13,h:19,c:'book'},
-    {n:'चित्र',x:1.6,y:2.1,w:10.5,h:14.8,c:'card'},
-    {n:'लाल वस्त्र',x:13.8,y:.3,w:10.1,h:6,c:'red'},
-    {n:'पीला वस्त्र',x:13.8,y:6.5,w:10.1,h:6,c:'yel'},
-    {n:'अंगवस्त्र',x:13.8,y:12.7,w:10.1,h:6.2,c:'ang'}
-  ];
-  var L2=[
-    {n:'गंगाजल',x:.3,y:.3,w:3.1,h:5,c:'vial'},
-    {n:'गुलाबजल',x:3.6,y:.3,w:3.1,h:5,c:'vial'},
-    {n:'कन्नौज इत्र',x:6.9,y:.3,w:3.1,h:5,c:'vial'},
-    {n:'खुर्जा दीया',x:10.4,y:.1,w:5.6,h:5.4,c:'diya'},
-    {n:'कपूर',x:16.4,y:.3,w:3.6,h:5,c:'kapur'},
-    {n:'जनेऊ',x:20.2,y:.3,w:3.7,h:5,c:'janeu'},
-    {n:'रोली',x:.3,y:5.6,w:3.8,h:5,c:'pow-r'},
-    {n:'चंदन',x:4.3,y:5.6,w:3.8,h:5,c:'pow-c'},
-    {n:'हवन सामग्री',x:8.3,y:5.6,w:7.9,h:5,c:'pouch'},
-    {n:'रुई बत्ती',x:16.4,y:5.6,w:3.6,h:5,c:'cotton'},
-    {n:'कलावा',x:20.2,y:5.6,w:3.7,h:5,c:'thread'},
-    {n:'कुश पवित्री',x:.3,y:10.9,w:5.2,h:4.5,c:'kusha'},
-    {n:'',x:5.7,y:10.9,w:5.2,h:4.5,c:'empty'},
-    {n:'हवन के कंडे',x:11.1,y:10.9,w:12.8,h:4.5,c:'kande'},
-    {n:'समिधा',x:.3,y:15.7,w:17.8,h:3.2,c:'wood'},
-    {n:'धूपबत्ती',x:18.3,y:15.7,w:5.6,h:3.2,c:'dhoop'}
-  ];
-  function make(o){var d=document.createElement('div');d.className='it '+o.c;d.style.left=o.x*S+'px';d.style.top=o.y*S+'px';d.style.width=o.w*S+'px';d.style.height=o.h*S+'px';d.textContent=o.n;return d;}
-  var l1=document.getElementById('l1'), l2=document.getElementById('l2');
-  L1.forEach(function(o){l1.appendChild(make(o));});
-  var trayEls=L2.map(function(o){var d=make(o);l2.appendChild(d);return {el:d,o:o};});
-  var l1Els=[].slice.call(l1.children);
-  var stage=document.getElementById('stage'), world=document.getElementById('world'), chip=document.getElementById('chip'), btn=document.getElementById('openBtn'), petalsEl=document.getElementById('petals');
-  var sway=world.firstElementChild;
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var timers=[], isOpen=false, busy=false, played=false;
-  var ry=-28, rx=-26, vy=0, vx=0, drag=null, moved=false, lastTouch=0, tweens=[];
-  var SPIN=10; /* deg per second, idle turntable */
-
-  function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
-  /* Fit against the OPEN state: ~580 wide, ~570 tall, lid tip ~410 above box centre */
-  function fit(){
-    var W=stage.clientWidth,H=stage.clientHeight;
-    var sc=Math.min(1,W/600,H/650);
-    var wy=(H-640*sc)/2+400*sc;
-    world.style.setProperty('--sc',sc.toFixed(3));
-    stage.style.setProperty('--sc',sc.toFixed(3));
-    stage.style.setProperty('--wy',wy.toFixed(1)+'px');
-    stage.style.setProperty('--fy',(wy+150*sc).toFixed(1)+'px');
-  }
-  function apply(){world.style.setProperty('--ry',ry.toFixed(2)+'deg');world.style.setProperty('--rx',rx.toFixed(2)+'deg');}
-  function clear(){timers.forEach(clearTimeout);timers=[];}
-  function later(fn,ms){timers.push(setTimeout(fn,reduce?0:ms));}
-  function say(t){chip.textContent=t;chip.classList.toggle('hide',!t);}
-  function snap(fn){stage.classList.add('snap');fn();void stage.offsetWidth;stage.classList.remove('snap');}
-  function ease(t){return 1-Math.pow(1-t,3);}
-  function tween(get,set,to,ms){var from=get();tweens.push({from:from,to:to,set:set,t0:performance.now(),ms:reduce?1:ms});}
-  function frontAngle(){return -28+Math.round((ry+28)/360)*360;}
-
-  /* one render loop: tweens, drag inertia, idle 360 turntable */
-  var last=performance.now();
-  function tick(now){
-    var dt=Math.min(.05,(now-last)/1000);last=now;
-    tweens=tweens.filter(function(tw){var k=clamp((now-tw.t0)/tw.ms,0,1);tw.set(tw.from+(tw.to-tw.from)*ease(k));return k<1;});
-    if(!drag&&!tweens.length){
-      if(Math.abs(vy)>2||Math.abs(vx)>2){ry+=vy*dt;rx+=vx*dt;var f=Math.pow(.05,dt);vy*=f;vx*=f;}
-      else if(!busy&&!reduce&&now-lastTouch>2600){ry+=SPIN*dt;}
-    }
-    rx=clamp(rx,-72,-6);
-    apply();
-    requestAnimationFrame(tick);
-  }
-
-  function scatter(el){
-    el.style.setProperty('--dz',(200+Math.random()*140).toFixed(0)+'px');
-    el.style.setProperty('--dr',((Math.random()*2-1)*55).toFixed(0)+'deg');
-    el.classList.add('out');
-  }
-  function petals(){
-    if(reduce)return;
-    petalsEl.innerHTML='';
-    var cols=['#E8A317','#F2C14E','#C8901F','#E07A1F','#9C4221','#F4EEDF'];
-    var sc=parseFloat(stage.style.getPropertyValue('--sc'))||1;
-    for(var i=0;i<22;i++){
-      var p=document.createElement('span');p.className='petal';
-      p.style.background=cols[i%cols.length];
-      p.style.setProperty('--px',((Math.random()*2-1)*300*sc).toFixed(0)+'px');
-      p.style.setProperty('--py',(-(140+Math.random()*220)*sc).toFixed(0)+'px');
-      p.style.setProperty('--pr',((Math.random()*2-1)*260).toFixed(0)+'deg');
-      p.style.setProperty('--pd',(2.3+Math.random()*1.2).toFixed(2)+'s');
-      p.style.setProperty('--pdl',(Math.random()*.45).toFixed(2)+'s');
-      petalsEl.appendChild(p);
-    }
-    stage.classList.remove('burst');void stage.offsetWidth;stage.classList.add('burst');
-  }
-
-  /* the artistic reveal: spin-in → light leaks → lid swings → samagri floats into its khana → lower layer rises */
-  function reveal(intro){
-    clear();busy=true;isOpen=true;vx=vy=0;
-    snap(function(){
-      stage.classList.remove('lift','settled','burst');
-      trayEls.forEach(function(t){scatter(t.el);t.el.classList.remove('lit');});
-    });
-    stage.classList.remove('open','crack');
-    stage.classList.add('played');
-    btn.textContent='डिब्बा बंद करें';
-    l1Els.forEach(function(el){el.classList.remove('shine');});
-    say('');
-    var t=0;
-    if(intro&&!reduce){
-      sway.style.setProperty('--fade',0);
-      var target=frontAngle();ry=target-340;apply();
-      tween(function(){return ry;},function(v){ry=v;},target,2000);
-      tween(function(){return 0;},function(v){sway.style.setProperty('--fade',v);},1,900);
-      tween(function(){return 46;},function(v){sway.style.setProperty('--bob',v+'px');},0,1600);
-      t=2050;
-    }else{
-      tween(function(){return ry;},function(v){ry=v;},frontAngle(),900);
-      t=700;
-    }
-    tween(function(){return rx;},function(v){rx=v;},-30,900);
-    later(function(){stage.classList.add('crack');say('गाँव से आपके द्वार तक');},t);
-    later(function(){stage.classList.remove('crack');stage.classList.add('open');petals();say('');},t+=850);
-    t+=950;
-    trayEls.forEach(function(t2){
-      later(function(){t2.el.classList.remove('out');if(t2.o.n)say(t2.o.n);},t);t+=reduce?0:150;
-    });
-    later(function(){trayEls.forEach(function(t2){if(t2.o.c==='diya')t2.el.classList.add('lit');});say('ऊपर की परत · 16 सामग्री');},t+=500);
-    later(function(){stage.classList.add('lift');say('नीचे: कथा पुस्तक, चित्र और 3 वस्त्र');
-      l1Els.forEach(function(el,i){later(function(){el.classList.add('shine');},450+i*220);});
-    },t+=1300);
-    later(function(){stage.classList.remove('lift');stage.classList.add('settled');l1Els.forEach(function(el){el.classList.remove('shine');});say('21 सामग्री · एक डिब्बे में');},t+=3400);
-    later(function(){say('');busy=false;lastTouch=0;},t+=2800);
-  }
-  function close(){
-    clear();isOpen=false;busy=false;
-    snap(function(){
-      stage.classList.remove('lift','burst');
-      trayEls.forEach(function(t){t.el.classList.remove('out','lit');});
-    });
-    stage.classList.remove('open','crack','settled');
-    l1Els.forEach(function(el){el.classList.remove('shine');});
-    btn.textContent='डिब्बा खोलकर देखें';say('');
-  }
-  function toggle(){isOpen?close():reveal(false);}
-
-  btn.addEventListener('click',toggle);
-  stage.addEventListener('keydown',function(e){
-    if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}
-    else if(e.key==='ArrowLeft'){ry-=15;lastTouch=performance.now();}
-    else if(e.key==='ArrowRight'){ry+=15;lastTouch=performance.now();}
-    else if(e.key==='ArrowUp'){rx-=8;lastTouch=performance.now();}
-    else if(e.key==='ArrowDown'){rx+=8;lastTouch=performance.now();}
-  });
-  stage.addEventListener('pointerdown',function(e){
-    if(e.button>0)return;
-    var n=performance.now();
-    drag={x:e.clientX,y:e.clientY,ry:ry,rx:rx,lx:e.clientX,ly:e.clientY,lt:n,id:e.pointerId};
-    moved=false;vx=vy=0;
-    try{stage.setPointerCapture(e.pointerId);}catch(_){}
-    stage.classList.add('held');
-  });
-  stage.addEventListener('pointermove',function(e){
-    if(!drag)return;
-    var dx=e.clientX-drag.x,dy=e.clientY-drag.y;
-    if(!moved&&Math.hypot(dx,dy)>6){moved=true;tweens=[];sway.style.setProperty('--fade',1);sway.style.setProperty('--bob','0px');}
-    if(!moved)return;
-    var n=performance.now(),dt=Math.max(.008,(n-drag.lt)/1000);
-    ry=drag.ry+dx*0.45;
-    if(e.pointerType!=='touch')rx=clamp(drag.rx-dy*0.3,-72,-6);
-    vy=(e.clientX-drag.lx)*0.45/dt;
-    vx=e.pointerType!=='touch'?-(e.clientY-drag.ly)*0.3/dt:0;
-    drag.lx=e.clientX;drag.ly=e.clientY;drag.lt=n;
-  });
-  function end(e){
-    if(!drag)return;
-    if(!moved&&e.type==='pointerup')toggle();
-    if(performance.now()-drag.lt>90){vx=vy=0;}
-    vy=clamp(vy,-600,600);vx=clamp(vx,-300,300);
-    try{stage.releasePointerCapture(drag.id);}catch(_){}
-    drag=null;lastTouch=performance.now();stage.classList.remove('held');
-  }
-  stage.addEventListener('pointerup',end);
-  stage.addEventListener('pointercancel',end);
-
-  window.addEventListener('resize',fit);fit();apply();
-  requestAnimationFrame(tick);
-
-  /* auto-play the reveal once, when the box scrolls into view */
-  function autoplay(){if(played)return;played=true;reveal(true);}
-  if(reduce){autoplay();}
-  else if('IntersectionObserver' in window){
-    sway.style.setProperty('--fade',0);
-    var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();setTimeout(autoplay,350);}},{threshold:.4});
-    io.observe(stage);
-  }else{setTimeout(autoplay,600);}
-})();
-</script>
 </body>
 </html>
